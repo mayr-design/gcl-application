@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Creative Lab Applicant - May Ruzicka</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- True Google Sans & Product Sans CDN Imports -->
+    <link href="https://fonts.cdnfonts.com/css/google-sans" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/product-sans" rel="stylesheet">
+    
+    <!-- Google-hosted Figtree Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        // Dynamically override Tailwind's default configuration to natively use Google Sans / Product Sans first
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Product Sans"', '"Google Sans"', 'Figtree', 'sans-serif'],
+                        google: ['"Product Sans"', '"Google Sans"', 'Figtree', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Product Sans', 'Google Sans', 'Figtree', sans-serif;
+            overflow-x: hidden;
+            background-color: #ffffff;
+        }
+        
+        .gs-thin {
+            font-family: 'Figtree', 'Product Sans', 'Google Sans', sans-serif;
+            font-weight: 300 !important; 
+        }
+        .gs-regular {
+            font-family: 'Figtree', 'Product Sans', 'Google Sans', sans-serif;
+            font-weight: 300 !important; 
+        }
+        .gs-medium {
+            font-family: 'Product Sans', 'Google Sans', 'Figtree', sans-serif;
+            font-weight: 500 !important;
+        }
+        .gs-semibold {
+            font-family: 'Product Sans', 'Google Sans', 'Figtree', sans-serif;
+            font-weight: 600 !important;
+        }
+        .gs-bold {
+            font-family: 'Product Sans', 'Google Sans', 'Figtree', sans-serif;
+            font-weight: 600 !important;
+        }
+        .gs-body-bold {
+            font-family: 'Figtree', 'Product Sans', 'Google Sans', sans-serif;
+            font-weight: 600 !important;
+        }
+
+        body, h1, p, a, span, div, button {
+            letter-spacing: -0.018em !important;
+        }
+
+        .shadow-nav {
+            box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2) !important;
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+        @keyframes pulse-gps {
+            0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.8; }
+            100% { transform: translate(-50%, -50%) scale(2.4); opacity: 0; }
+        }
+        @keyframes detect-card-slide {
+            0%, 15% { transform: translateY(140%); opacity: 0; }
+            28%, 85% { transform: translateY(0); opacity: 1; }
+            95%, 100% { transform: translateY(140%); opacity: 0; }
+        }
+        
+        .s2-stack {
+          position: relative;
+          width: 200px; height: 180px;
+        }
+        .s2-card {
+          position: absolute;
+          width: 200px; height: 115px;
+          border-radius: 16px;
+          left: 0;
+          padding: 12px 16px;
+          display: flex; flex-direction: column; justify-content: flex-end;
+        }
+        .s2-c3 { background: #2d2635; top: 30px; z-index: 1; }
+        .s2-c2 { background: #d4d4d4; top: 40px; z-index: 2; }
+        .s2-c1 {
+          background: #4285F4;
+          top: 50px; z-index: 3;
+          animation: s2-liftUp 2.6s cubic-bezier(.4,0,.2,1) infinite;
+          box-shadow: 0 8px 24px rgba(66,133,244,.25);
+        }
+        @keyframes s2-liftUp {
+          0%,15%  { transform: translateY(0);    box-shadow: 0 8px 24px rgba(66,133,244,.25); }
+          40%,70% { transform: translateY(-42px); box-shadow: 0 24px 40px rgba(66,133,244,.35); }
+          95%,100%{ transform: translateY(0);    box-shadow: 0 8px 24px rgba(66,133,244,.25); }
+        }
+        .s2-chip {
+          width: 24px; height: 18px; border-radius: 3px;
+          background: rgba(255,255,255,.2);
+          margin-bottom: 8px;
+        }
+        .s2-c3 .s2-chip { background: rgba(255,255,255,.12); }
+        .s2-c2 .s2-chip { background: rgba(0,0,0,.12); }
+        .s2-cn { font-family: 'Product Sans', 'Google Sans', sans-serif; font-size:11px; font-weight:500; color:rgba(255,255,255,.9); }
+        .s2-cp { font-family: 'Figtree', sans-serif; font-size:9px; color:rgba(255,255,255,.55); margin-top:2px; }
+        .s2-c2 .s2-cn { color: rgba(0,0,0,.6); }
+        .s2-c2 .s2-cp { color: rgba(0,0,0,.35); }
+        .s2-c3 .s2-cn { color: rgba(255,255,255,.5); }
+        .s2-c3 .s2-cp { color: rgba(255,255,255,.25); }
+        .s2-c1 .s2-cp  { color: rgba(255,255,255,.85); }
+
+        .s2-badge {
+          position: absolute; top: 12px; right: 12px;
+          background: #FBBC04; color: #7A5000;
+          font-family: 'Product Sans', 'Google Sans', sans-serif;
+          font-size:8px; font-weight:700;
+          padding: 3px 8px; border-radius:100px;
+          letter-spacing:.04em;
+          opacity:0;
+          animation: s2-showBadge 2.6s ease infinite;
+        }
+        @keyframes s2-showBadge {
+          0%,25%  { opacity:0; transform:scale(.8); }
+          45%,70% { opacity:1; transform:scale(1); }
+          90%,100%{ opacity:0; transform:scale(.8); }
+        }
+
+        .scene {
+          position: relative;
+          width: 300px; height: 180px;
+          display: flex; align-items: center; justify-content: center;
+        }
+        .phone {
+          position: absolute;
+          left: 10px;
+          width: 96px; height: 172px;
+          border-radius: 16px;
+          background: #ffffff;
+          box-shadow: 0 12px 32px rgba(0,0,0,.12);
+          animation: phoneNudge 2.4s cubic-bezier(.4,0,.2,1) infinite;
+          z-index: 2;
+          display: flex; flex-direction: column;
+          align-items: center; justify-content: center;
+          padding: 12px 10px;
+          gap: 8px;
+        }
+        @keyframes phoneNudge {
+          0%,20%  { transform: translateX(0); }
+          45%,65% { transform: translateX(36px); }
+          90%,100%{ transform: translateX(0); }
+        }
+        .gw-label {
+          font-size: 6px; color: #aaa; letter-spacing: .06em;
+          align-self: flex-start;
+        }
+        .phone-card {
+          width: 76px; height: 50px;
+          background: #4285F4;
+          border-radius: 6px;
+          padding: 7px 8px;
+          display: flex; flex-direction: column; justify-content: space-between;
+          flex-shrink: 0;
+        }
+        .chip {
+          width: 18px; height: 13px;
+          background: rgba(255,255,255,.25);
+          border-radius: 2px;
+        }
+        .card-dots {
+          display: flex; gap: 2px; align-self: flex-end;
+        }
+        .dot { width: 4px; height: 4px; border-radius: 50%; background: rgba(255,255,255,.3); }
+
+        .ripples {
+          position: absolute;
+          left: 122px;
+          display: flex; flex-direction: column; justify-content: center;
+          gap: 6px;
+        }
+        .ripple-arc {
+          border: 2px solid #34A853;
+          border-left: none;
+          opacity: 0;
+          animation: arcPulse 2.4s ease infinite;
+        }
+        .ripple-arc:nth-child(1) { width: 10px; height: 10px; border-radius: 0 10px 10px 0; animation-delay: .0s; }
+        .ripple-arc:nth-child(2) { width: 16px; height: 16px; border-radius: 0 16px 16px 0; animation-delay: .1s; }
+        .ripple-arc:nth-child(3) { width: 22px; height: 22px; border-radius: 0 22px 22px 0; animation-delay: .2s; }
+        @keyframes arcPulse {
+          0%,30%  { opacity: 0; }
+          45%,65% { opacity: 1; }
+          85%,100%{ opacity: 0; }
+        }
+
+        .terminal {
+          position: absolute;
+          right: 10px;
+          width: 88px; height: 172px;
+          background: #e4e4e4;
+          border-radius: 10px;
+          display: flex; flex-direction: column;
+          align-items: center;
+          padding: 10px 8px 10px;
+          box-shadow: 0 8px 24px rgba(0,0,0,.12);
+          z-index: 1;
+        }
+        .terminal-screen {
+          width: 100%; background: white;
+          border-radius: 5px; padding: 7px 6px;
+          margin-bottom: 8px;
+        }
+        .terminal-amount {
+          font-size: 12px; font-weight: 700; color: #1a1a1a;
+          text-align: center;
+        }
+        .terminal-store {
+          font-size: 6px; color: #aaa; text-align: center; margin-top: 2px;
+        }
+        .terminal-nfc {
+          display: flex; flex-direction: column; align-items: center; gap: 3px;
+          margin-bottom: 8px;
+        }
+        .nfc-arc {
+          border: 1.5px solid #34A853;
+          border-bottom: none; border-radius: 40px 40px 0 0;
+          opacity: 0;
+          animation: nfcPulse 2.4s ease infinite;
+        }
+        .nfc-arc:nth-child(1) { width: 8px;  height: 5px;  animation-delay:.05s; }
+        .nfc-arc:nth-child(2) { width: 16px; height: 9px; animation-delay:.15s; }
+        .nfc-arc:nth-child(3) { width: 24px; height: 13px; animation-delay:.25s; }
+        @keyframes nfcPulse {
+          0%,30%  { opacity: 0; }
+          50%,65% { opacity: 1; }
+          85%,100%{ opacity: 0; }
+        }
+        .keypad {
+          display: grid; grid-template-columns: repeat(3,1fr); gap: 4px;
+          width: 100%; margin-top: auto;
+        }
+        .key { background: #cecece; border-radius: 3px; height: 13px; }
+
+        .success {
+          position: absolute;
+          left: 50%; top: 50%;
+          width: 38px; height: 38px;
+          border-radius: 50%;
+          background: #34A853;
+          display: flex; align-items: center; justify-content: center;
+          opacity: 0;
+          animation: showCheck 2.4s ease infinite;
+          z-index: 3;
+        }
+        @keyframes showCheck {
+          0%,55%  { opacity: 0; transform: translate(-50%,-50%) scale(.6); }
+          70%,80% { opacity: 1; transform: translate(-50%,-50%) scale(1); }
+          92%,100%{ opacity: 0; transform: translate(-50%,-50%) scale(.6); }
+        }
+
+        @keyframes earn-pill {
+            0%, 28% { transform: scale(0.95); opacity: 0.4; filter: grayscale(40%); }
+            36%, 75% { transform: scale(1); opacity: 1; filter: grayscale(0%); }
+            83%, 100% { transform: scale(0.95); opacity: 0.4; filter: grayscale(40%); }
+        }
+
+        @keyframes subway-travel {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .preserve-3d {
+            transform-style: preserve-3d;
+            -webkit-transform-style: preserve-3d;
+        }
+        .backface-hidden {
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+<body class="relative">
+
+    <!-- NAVIGATION BAR -->
+    <nav class="fixed top-5 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-3xl">
+        <div class="bg-white/95 backdrop-blur-md px-8 sm:px-12 py-1.5 rounded-full shadow-nav border border-gray-100/60 flex items-center justify-between gap-1 sm:gap-4 md:gap-5 overflow-x-auto">
+            <a href="#" class="text-[10px] sm:text-[11.5px] gs-medium text-gray-500 hover:text-black transition-colors whitespace-nowrap">Why this</a>
+            <a href="#" class="text-[10px] sm:text-[11.5px] gs-medium text-gray-500 hover:text-black transition-colors whitespace-nowrap">How it works</a>
+            <a href="#" class="text-[10px] sm:text-[11.5px] gs-medium text-gray-500 hover:text-black transition-colors whitespace-nowrap">Google Integration</a>
+            <a href="#" class="text-[10px] sm:text-[11.5px] gs-medium text-gray-500 hover:text-black transition-colors whitespace-nowrap">Spend categories</a>
+            <a href="#" class="text-[10px] sm:text-[11.5px] gs-medium text-gray-500 hover:text-black transition-colors whitespace-nowrap">Top rewards</a>
+            <a href="#" class="text-[10px] sm:text-[11.5px] gs-medium text-gray-500 hover:text-black transition-colors whitespace-nowrap">Real reviews</a>
+        </div>
+    </nav>
+
+    <!-- SCROLL TRACK CONTAINER -->
+    <div id="scroll-track" class="h-[250vh] relative w-full">
+        
+        <!-- HERO VIEWPORT -->
+        <div class="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center">
+            
+            <div id="bg-white" class="absolute inset-0 bg-white transition-opacity duration-75 z-0"></div>
+            <div id="bg-gradient" class="absolute inset-0 opacity-0 z-0 transition-opacity duration-75 flex items-center justify-center" 
+                 style="background: linear-gradient(to bottom, #FFFFFF 0%, #3A87FA 100%);">
+                
+                <div class="absolute top-[42%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full flex items-center justify-center pointer-events-none">
+                    <div class="absolute w-[660px] h-[660px] sm:w-[940px] sm:h-[940px] rounded-full border-[90px] sm:border-[135px] border-white/65 blur-[40px] sm:blur-[55px] transform animate-[spin_30s_linear_infinite]"></div>
+                    <div class="absolute w-[620px] h-[620px] sm:w-[860px] sm:h-[860px] rounded-full border-[28px] sm:border-[42px] border-white/85 blur-[10px] sm:blur-[14px]"></div>
+                </div>
+            </div>
+
+            <!-- HERO TEXT CONTAINER -->
+            <div id="hero-text" class="absolute z-30 text-center px-4 w-full max-w-4xl opacity-0 transform translate-y-8 transition-all pointer-events-none">
+                <h1 class="gs-semibold text-6xl sm:text-7xl md:text-8xl lg:text-[7rem] text-white leading-none">
+                    Tap In
+                </h1>
+                
+                <p class="mt-6 text-xl sm:text-2xl md:text-3xl leading-snug max-w-3xl mx-auto">
+                    <span class="text-white gs-regular">with </span><span class="text-white gs-bold">Google Wallet's newest</span><br>
+                    <span class="text-white gs-bold">feature</span><span class="text-[#4285F4] gs-regular"> and </span><span class="text-[#4285F4] gs-bold">Google Creative Lab's</span><br>
+                    <span class="text-[#4285F4] gs-bold">newest applicant</span>
+                </p>
+                
+                <div class="mt-8 text-sm sm:text-base gs-thin text-white/80">
+                    Google Tap & May Ruzicka
+                </div>
+            </div>
+
+            <!-- CARDS CONTAINER -->
+            <div class="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
+                <div class="relative w-full h-full flex items-center justify-center">
+
+                    <div id="card-art-director" class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[261px] h-[162px] sm:w-[306px] sm:h-[189px] rounded-[1.6rem] bg-[#4285F4] p-5 sm:p-6 flex flex-col justify-end gap-2.5 items-start pointer-events-auto cursor-pointer border border-blue-400/10">
+                        <div class="w-10 h-7 sm:w-12 sm:h-8 rounded-md sm:rounded-lg bg-[#1a56db]"></div>
+                        <div class="text-left select-none flex flex-col gap-0.5 w-full">
+                            <div class="gs-medium text-base sm:text-xl text-black leading-[1.05]">2026 GLC5</div>
+                            <div class="relative h-5 sm:h-7 w-full overflow-hidden">
+                                <div id="label-may" class="absolute inset-0 gs-medium text-sm sm:text-lg text-black/95 leading-[1.05] transition-opacity duration-75">May Ruzicka</div>
+                                <div id="label-art" class="absolute inset-0 gs-medium text-sm sm:text-lg text-black/95 leading-[1.05] transition-opacity duration-75 opacity-0">Art Director</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="card-designer" class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[261px] h-[162px] sm:w-[306px] sm:h-[189px] rounded-[1.6rem] bg-[#4285F4] p-5 sm:p-6 flex flex-col justify-end gap-2.5 items-start opacity-0 border border-blue-400/10">
+                        <div class="w-10 h-7 sm:w-12 sm:h-8 rounded-md sm:rounded-lg bg-[#1a56db]"></div>
+                        <div class="text-left select-none flex flex-col gap-0.5">
+                            <div class="gs-medium text-base sm:text-xl text-black leading-[1.05]">2026 GLC5</div>
+                            <div class="gs-medium text-sm sm:text-lg text-black/95 leading-[1.05]">Designer</div>
+                        </div>
+                    </div>
+
+                    <div id="card-creative-technologist" class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[261px] h-[162px] sm:w-[306px] sm:h-[189px] rounded-[1.6rem] bg-[#4285F4] p-5 sm:p-6 flex flex-col justify-end gap-2.5 items-start opacity-0 border border-blue-400/10">
+                        <div class="w-10 h-7 sm:w-12 sm:h-8 rounded-md sm:rounded-lg bg-[#1a56db]"></div>
+                        <div class="text-left select-none flex flex-col gap-0.5">
+                            <div class="gs-medium text-base sm:text-xl text-black leading-[1.05]">2026 GLC5</div>
+                            <div class="gs-medium text-sm sm:text-lg text-black/95 leading-[1.05]">Creative Technologist</div>
+                        </div>
+                    </div>
+
+                    <div id="card-visual-storyteller" class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[261px] h-[162px] sm:w-[306px] sm:h-[189px] rounded-[1.6rem] bg-[#4285F4] p-5 sm:p-6 flex flex-col justify-end gap-2.5 items-start opacity-0 border border-blue-400/10">
+                        <div class="w-10 h-7 sm:w-12 sm:h-8 rounded-md sm:rounded-lg bg-[#1a56db]"></div>
+                        <div class="text-left select-none flex flex-col gap-0.5">
+                            <div class="gs-medium text-base sm:text-xl text-black leading-[1.05]">2026 GLC5</div>
+                            <div class="gs-medium text-sm sm:text-lg text-black/95 leading-[1.05]">Visual Storyteller</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- SCROLL INDICATOR -->
+            <div id="scroll-guide" class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-30 transition-opacity duration-300">
+                <span class="text-xs font-semibold uppercase">Scroll Down to Tap In</span>
+                <svg class="w-5 h-5 text-gray-400 animate-bounce" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
+                </svg>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- WHY THIS / WHY ME SECTION -->
+    <section class="bg-white text-black z-30 relative shadow-[0_-10px_50px_rgba(0,0,0,0.04)] py-24 sm:py-32 flex items-center justify-center">
+        <div class="max-w-5xl w-full mx-auto px-6 sm:px-12 md:px-16 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-stretch">
+            <div class="md:col-span-5 flex flex-col justify-between min-h-[220px] md:min-h-[400px] space-y-12 md:space-y-0">
+                <div class="flex flex-col items-start justify-center select-none w-full">
+                    <h2 class="text-4xl sm:text-5xl lg:text-[4rem] leading-[1.05] gs-bold text-black tracking-tighter text-left">
+                        Why this?
+                    </h2>
+                    <span class="text-neutral-300 gs-regular text-3xl sm:text-4xl block my-2 pl-10 sm:pl-14 text-left select-none">+</span>
+                    <h2 class="text-4xl sm:text-5xl lg:text-[4rem] leading-[1.05] gs-bold text-[#4285F4] tracking-tighter text-left">
+                        Why me?
+                    </h2>
+                </div>
+                
+                <div class="text-[13px] sm:text-[14px] leading-tight space-y-1 select-none text-left w-full">
+                    <div class="gs-regular text-neutral-500">
+                        Product: <span class="gs-regular text-neutral-800">Google Tap</span>
+                    </div>
+                    <div class="gs-regular text-[#4285F4]">
+                        Person: <span class="gs-medium text-[#4285F4]">May Ruzicka</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:col-span-7 flex flex-col justify-center space-y-6 sm:space-y-7 text-[15px] sm:text-[17px] md:text-[18px] leading-[1.5] text-neutral-600">
+                <p class="gs-regular">Every time you tap without thinking, you leave potential points on the table. You have the perfect credit card somewhere in your wallet. But at the register, in the moment, you just tap whatever's on top.</p>
+                <p class="gs-regular text-[#4285F4]">Creativity works the same way. We all have the capacity for it, but without the right tools, experience, and ambition, we default to the easier solution instead of the creative one. The safer idea. The one that's already on top.</p>
+                <p class="gs-regular">So what if there was an application in your Google Wallet that seamlessly selects the best card for maximizing your return, right at the point of payment?</p>
+                <p class="gs-regular text-[#4285F4]">Well, that would be like having a multi-disciplinary creative directly in Google Creative Labs that doesn't default to the easiest solution. One who directs, designs, builds, and thinks in systems, not safety, especially when it matters most.</p>
+                <p class="gs-body-bold text-neutral-950 leading-[1.45]">So for my GCL5 application, I simultaneously built a landing page for a product that doesn't exist yet and a person you haven't met yet. Scroll down to tap in!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS SECTION -->
+    <section class="bg-black text-white py-24 sm:py-32 z-30 relative flex flex-col items-center justify-center space-y-28 sm:space-y-36">
+        
+        <!-- Google Tap Sub-Block -->
+        <div class="max-w-5xl w-full mx-auto px-6 sm:px-12 md:px-16 text-center">
+            <div class="mb-14 sm:mb-20 max-w-xl mx-auto w-full select-none">
+                <div class="flex flex-col items-center justify-center">
+                    <h2 class="text-5xl sm:text-6xl md:text-7xl gs-bold leading-[0.9] text-white text-center">
+                        Google
+                    </h2>
+                    <div class="grid grid-cols-3 items-center w-full mt-0 sm:mt-0.5">
+                        <div class="text-right pr-6 sm:pr-8 md:pr-10">
+                            <span class="gs-bold text-2xl sm:text-3xl md:text-4xl text-neutral-400">How</span>
+                        </div>
+                        <div class="text-center">
+                            <span class="text-5xl sm:text-6xl md:text-7xl gs-bold leading-[0.9] text-white">Tap</span>
+                        </div>
+                        <div class="text-left pl-6 sm:pl-8 md:pl-10">
+                            <span class="gs-bold text-2xl sm:text-3xl md:text-4xl text-neutral-400">works</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-start">
+                <!-- Step 1: Detect -->
+                <div class="flex flex-col items-start text-left space-y-6 group w-full">
+                    <div class="w-full aspect-[3/4] bg-[#f4f3f0] rounded-[1.25rem] overflow-hidden shadow-2xl relative border border-white/5 transition-transform duration-500 group-hover:scale-[1.02] p-4 flex flex-col justify-between">
+                        <div class="scale-[0.82] sm:scale-[0.88] md:scale-[0.90] lg:scale-100 overflow-visible w-full h-full flex flex-col justify-between relative">
+                            <div class="absolute inset-0 w-full h-full opacity-95 rounded-2xl overflow-hidden shadow-inner">
+                                <svg viewBox="0 0 300 400" class="absolute inset-0 w-full h-full" style="background-color: #f4f3f0;">
+                                    <path d="M -10,-10 L 115,-10 L 115,100 L -10,135 Z" fill="#e2f0d9" />
+                                    <path d="M 130,-10 L 310,-10 L 310,120 L 130,85 Z" fill="#fdf4e8" />
+                                    <path d="M -10,150 L 115,115 L 115,225 L -10,225 Z" fill="#e8eaed" />
+                                    <path d="M 105,140 L 205,130 L 205,245 L 105,245 Z" fill="#fdf4e8" />
+                                    <path d="M 115,155 L 195,147 L 195,215 L 115,215 Z" fill="#00704a" />
+                                    <text x="155" y="180" fill="#ffffff" font-family="'Product Sans', 'Google Sans', sans-serif" font-weight="700" font-size="8.5" text-anchor="middle" letter-spacing="-0.03em" class="select-none pointer-events-none">whole foods</text>
+                                    <text x="155" y="190" fill="#ffffff" font-family="'Product Sans', 'Google Sans', sans-serif" font-weight="500" font-size="5.5" text-anchor="middle" opacity="0.8" letter-spacing="0.05em" class="select-none pointer-events-none">MARKET</text>
+                                    <path d="M 215,130 L 310,145 L 310,245 L 215,245 Z" fill="#e8eaed" />
+                                    <path d="M -10,305 C 60,285 140,335 310,295 L 310,410 L -10,410 Z" fill="#e3f2fd" />
+                                    <path d="M 130,255 L 210,255 L 210,285 L 130,285 Z" fill="#e8eaed" />
+                                </svg>
+                            </div>
+                            <div class="absolute right-4 top-4 bg-white rounded-lg p-1 shadow flex flex-col gap-1 scale-90 z-20 border border-neutral-100/80">
+                                <button class="w-5 h-5 bg-neutral-50 hover:bg-neutral-100 rounded flex items-center justify-center text-xs text-neutral-800 gs-bold select-none">+</button>
+                                <button class="w-5 h-5 bg-neutral-50 hover:bg-neutral-100 rounded flex items-center justify-center text-xs text-neutral-800 gs-bold select-none">-</button>
+                            </div>
+                            <div class="absolute top-[45%] left-[51.6%] -translate-x-1/2 -translate-y-1/2 pointer-events-none z-10">
+                                <div class="absolute w-8 h-8 bg-blue-500/30 rounded-full animate-[pulse-gps_2s_infinite_ease-out]"></div>
+                                <div class="w-2.5 h-2.5 bg-blue-600 rounded-full border-2 border-white shadow"></div>
+                            </div>
+                            <div class="bg-white rounded-2xl p-3 shadow-md border border-neutral-100/85 w-full flex items-center gap-2.5 z-10 absolute bottom-0 left-0 animate-[detect-card-slide_5s_infinite_cubic-bezier(0.25,1,0.5,1)]">
+                                <div class="w-8 h-8 rounded-full bg-[#00704a] flex items-center justify-center text-white gs-bold text-[10px]">wf</div>
+                                <div class="flex-1 min-w-0 text-left">
+                                    <div class="text-[11px] sm:text-[12px] gs-bold text-neutral-900 text-left leading-tight">Whole Foods Market</div>
+                                    <div class="text-[9px] text-neutral-400 gs-regular flex items-center gap-1 mt-0.5">
+                                        <span class="text-amber-400">★★★★☆</span> 4.2 · Grocery
+                                    </div>
+                                    <div class="flex gap-1 mt-1.5">
+                                        <span class="bg-blue-50 text-blue-600 text-[8px] px-1.5 py-0.5 rounded gs-bold">🛒 Grocery</span>
+                                        <span class="bg-green-50 text-green-600 text-[8px] px-1.5 py-0.5 rounded gs-bold">✓ Category detected</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-4 px-4">
+                        <h3 class="text-2xl gs-bold text-white tracking-tight">1. Detect</h3>
+                        <p class="gs-regular text-white/70 text-[16px] sm:text-[17px] leading-relaxed">
+                            Google Tap identifies the store you're at and the purchase category in real time.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 2: Select -->
+                <div class="flex flex-col items-start text-left space-y-6 group w-full">
+                    <div class="w-full aspect-[3/4] bg-[#f8f9fa] rounded-[1.25rem] overflow-hidden shadow-2xl relative border border-white/5 transition-transform duration-500 group-hover:scale-[1.02] p-4 flex flex-col justify-between items-center">
+                        <div class="flex-1 flex items-center justify-center scale-[0.82] sm:scale-[0.88] md:scale-[0.90] lg:scale-[0.98] overflow-visible py-4 h-[180px] w-full">
+                            <div class="s2-stack">
+                                <div class="s2-card s2-c3">
+                                    <div class="s2-chip"></div>
+                                    <div class="s2-cn">Chase Sapphire</div>
+                                    <div class="s2-cp">1x groceries</div>
+                                </div>
+                                <div class="s2-card s2-c2">
+                                    <div class="s2-chip"></div>
+                                    <div class="s2-cn">Citi Double Cash</div>
+                                    <div class="s2-cp">2x groceries</div>
+                                </div>
+                                <div class="s2-card s2-c1">
+                                    <div class="s2-badge">Best ✓</div>
+                                    <div class="s2-chip"></div>
+                                    <div class="s2-cn">Amex Gold Card</div>
+                                    <div class="s2-cp">4x points on groceries</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-[#e8f0fe] text-[#1a73e8] text-[9.5px] gs-bold px-4 py-1.5 rounded-full mt-2 border border-[#d2e3fc] shadow-sm mb-1 z-10">
+                            💳 Best card surfaced automatically
+                        </div>
+                    </div>
+                    <div class="space-y-4 px-4">
+                        <h3 class="text-2xl gs-bold text-white tracking-tight">2. Select</h3>
+                        <p class="gs-regular text-white/70 text-[16px] sm:text-[17px] leading-relaxed">
+                            Your cards are scanned instantly. The one that earns the most for that category moves to the front.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 3: Earn -->
+                <div class="flex flex-col items-start text-left space-y-6 group w-full">
+                    <div class="w-full aspect-[3/4] bg-[#f8f9fa] rounded-[1.25rem] overflow-hidden shadow-2xl relative border border-white/5 transition-transform duration-500 group-hover:scale-[1.02] p-4 flex flex-col justify-between items-center">
+                        <div class="flex-1 flex items-center justify-center scale-[0.82] sm:scale-[0.88] md:scale-[0.90] lg:scale-[0.98] overflow-visible py-4 h-[180px] w-full">
+                            <div class="scene">
+                                <div class="phone">
+                                    <div class="gw-label font-sans gs-regular">Google Wallet</div>
+                                    <div class="phone-card">
+                                        <div class="chip"></div>
+                                        <div class="card-dots">
+                                            <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ripples">
+                                    <div class="ripple-arc"></div><div class="ripple-arc"></div><div class="ripple-arc"></div>
+                                </div>
+                                <div class="terminal">
+                                    <div class="terminal-screen">
+                                        <div class="terminal-amount font-sans gs-bold">$24.50</div>
+                                        <div class="terminal-store font-sans gs-regular">Whole Foods</div>
+                                    </div>
+                                    <div class="terminal-nfc">
+                                        <div class="nfc-arc"></div><div class="nfc-arc"></div><div class="nfc-arc"></div>
+                                    </div>
+                                    <div class="keypad">
+                                        <div class="key"></div><div class="key"></div><div class="key"></div>
+                                        <div class="key"></div><div class="key"></div><div class="key"></div>
+                                        <div class="key"></div><div class="key"></div><div class="key"></div>
+                                        <div class="key"></div><div class="key"></div><div class="key"></div>
+                                    </div>
+                                </div>
+                                <div class="success">
+                                    <svg viewBox="0 0 18 18" fill="none" width="18" height="18">
+                                        <path d="M3.5 9L7.5 13L14.5 5.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-[#e6f4ea] text-[#34A853] text-[9.5px] gs-bold px-4 py-1.5 rounded-full border border-[#ceead6] shadow-sm animate-[earn-pill_2.4s_infinite_ease-in-out] mb-1 z-10">
+                            ✓ +4x points earned
+                        </div>
+                    </div>
+                    <div class="space-y-4 px-4">
+                        <h3 class="text-2xl gs-bold text-white tracking-tight">3. Earn</h3>
+                        <p class="gs-regular text-white/70 text-[16px] sm:text-[17px] leading-relaxed">
+                            Google Pay automatically taps with the best card. Points land. No thinking required.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- How May Works Sub-Block -->
+        <div class="max-w-5xl w-full mx-auto px-6 sm:px-12 md:px-16 text-center">
+            <div class="mb-14 sm:mb-20 max-w-xl mx-auto w-full select-none">
+                <div class="flex flex-col items-center justify-center">
+                    <div class="grid grid-cols-3 items-center w-full mb-0 sm:mb-0.5">
+                        <div class="text-right pr-6 sm:pr-8 md:pr-10">
+                            <span class="gs-bold text-2xl sm:text-3xl md:text-4xl text-neutral-400">How</span>
+                        </div>
+                        <div class="text-center">
+                            <span class="text-5xl sm:text-6xl md:text-7xl gs-bold leading-[0.9] text-[#4285F4]">May</span>
+                        </div>
+                        <div class="text-left pl-6 sm:pl-8 md:pl-10">
+                            <span class="gs-bold text-2xl sm:text-3xl md:text-4xl text-neutral-400">works</span>
+                        </div>
+                    </div>
+                    <h2 class="text-5xl sm:text-6xl md:text-7xl gs-bold leading-[0.9] text-[#4285F4] text-center">
+                        Ruzicka
+                    </h2>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-start">
+                <div class="flex flex-col items-start text-left space-y-6 group w-full">
+                    <div class="w-full aspect-[3/4] bg-[#121212] rounded-[1.25rem] border border-neutral-800/80 flex flex-col items-center justify-center text-center p-6 relative group-hover:border-neutral-700 transition-colors shadow-2xl">
+                        <div class="w-12 h-12 rounded-full bg-neutral-900 flex items-center justify-center border border-neutral-800 mb-3">
+                            <svg class="w-6 h-6 text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <span class="text-[10px] uppercase tracking-wider text-neutral-500 gs-medium">Placeholder #1</span>
+                        <span class="text-[11px] text-neutral-600 gs-regular mt-1">Presentation Deck Cover</span>
+                    </div>
+                    <p class="gs-regular text-neutral-400 text-[11px] leading-snug px-1 select-none">
+                        Vibe coded an interactive presentation deck for Netflix
+                    </p>
+                    <div class="space-y-4 px-1">
+                        <h3 class="text-2xl gs-bold text-white tracking-tight">1. Detect</h3>
+                        <p class="gs-regular text-white/70 text-[16px] sm:text-[17px] leading-relaxed">
+                            I look for the unexpected path to the expected output. Every deliverable is a creative opportunity.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-start text-left space-y-6 group w-full">
+                    <div class="w-full aspect-[3/4] bg-[#121212] rounded-[1.25rem] border border-neutral-800/80 flex flex-col items-center justify-center text-center p-6 relative group-hover:border-neutral-700 transition-colors shadow-2xl">
+                        <div class="w-12 h-12 rounded-full bg-neutral-900 flex items-center justify-center border border-neutral-800 mb-3">
+                            <svg class="w-6 h-6 text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <span class="text-[10px] uppercase tracking-wider text-neutral-500 gs-medium">Placeholder #2</span>
+                        <span class="text-[11px] text-neutral-600 gs-regular mt-1">Self-Produced Video Spot</span>
+                    </div>
+                    <p class="gs-regular text-neutral-400 text-[11px] leading-snug px-1 select-none">
+                        Self produced, directed, and scored Doritos spot
+                    </p>
+                    <div class="space-y-4 px-1">
+                        <h3 class="text-2xl gs-bold text-white tracking-tight">2. Select</h3>
+                        <p class="gs-regular text-white/70 text-[16px] sm:text-[17px] leading-relaxed">
+                            I reach for whatever the idea needs: designing, producing, building, directing.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-start text-left space-y-6 group w-full">
+                    <div class="w-full aspect-[3/4] bg-[#121212] rounded-[1.25rem] border border-neutral-800/80 flex flex-col items-center justify-center text-center p-6 relative group-hover:border-neutral-700 transition-colors shadow-2xl">
+                        <div class="w-12 h-12 rounded-full bg-neutral-900 flex items-center justify-center border border-neutral-800 mb-3">
+                            <svg class="w-6 h-6 text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 4a2 2 0 00-2-2m2 2a2 2 0 01-2 2m2-2h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <span class="text-[10px] uppercase tracking-wider text-neutral-500 gs-medium">Placeholder #3</span>
+                        <span class="text-[11px] text-neutral-600 gs-regular mt-1">Editorial Press Feature</span>
+                    </div>
+                    <p class="gs-regular text-neutral-400 text-[11px] leading-snug px-1 select-none">
+                        Fast Company coverage of Check Lyft campaign which earned 467 million impressions
+                    </p>
+                    <div class="space-y-4 px-1">
+                        <h3 class="text-2xl gs-bold text-white tracking-tight">3. Earn</h3>
+                        <p class="gs-regular text-white/70 text-[16px] sm:text-[17px] leading-relaxed">
+                            I make work that earns attention — in the press, in culture, in the feed.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GOOGLE ECOSYSTEM INTEGRATION SECTION -->
+    <section class="bg-white text-black py-24 sm:py-32 z-30 relative flex flex-col items-center justify-center border-t border-neutral-100">
+        
+        <div class="max-w-5xl w-full mx-auto px-6 sm:px-12 md:px-16 text-center">
+            
+            <h2 class="text-4xl sm:text-5xl md:text-6xl gs-bold leading-none text-neutral-900 text-center mb-16 sm:mb-24 select-none">
+                Google Ecosystem<br>Integration
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 items-start mb-10 select-none">
+                
+                <div class="flex flex-col items-center text-center space-y-4 px-4">
+                    <span class="text-neutral-400 text-sm font-sans gs-regular">01</span>
+                    <div class="w-16 h-16 flex flex-col items-center justify-center bg-neutral-50 rounded-2xl border border-neutral-200">
+                        <svg class="w-6 h-6 text-neutral-400 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
+                        </svg>
+                        <span class="text-[7.5px] uppercase tracking-wider text-neutral-500 font-sans gs-medium">[Wallet]</span>
+                    </div>
+                    <p class="gs-regular text-neutral-600 text-[14px] leading-tight max-w-[200px] text-center">
+                        Stores your cards<br>with <span class="gs-bold text-neutral-900">Google Wallet</span>
+                    </p>
+                </div>
+
+                <div class="flex flex-col items-center text-center space-y-4 px-4">
+                    <span class="text-neutral-400 text-sm font-sans gs-regular">02</span>
+                    <div class="w-16 h-16 flex flex-col items-center justify-center bg-neutral-50 rounded-2xl border border-neutral-200">
+                        <svg class="w-6 h-6 text-neutral-400 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <circle cx="12" cy="11" r="2" stroke="currentColor" stroke-width="1.5"></circle>
+                        </svg>
+                        <span class="text-[7.5px] uppercase tracking-wider text-neutral-500 font-sans gs-medium">[Maps]</span>
+                    </div>
+                    <p class="gs-regular text-neutral-600 text-[14px] leading-tight max-w-[200px] text-center">
+                        Identifies the merchant<br>with <span class="gs-bold text-neutral-900">Google Maps</span>
+                    </p>
+                </div>
+
+                <div class="flex flex-col items-center text-center space-y-4 px-4">
+                    <span class="text-neutral-400 text-sm font-sans gs-regular">03</span>
+                    <div class="w-16 h-16 flex flex-col items-center justify-center bg-neutral-50 rounded-2xl border border-neutral-200">
+                        <svg class="w-6 h-6 text-neutral-400 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span class="text-[7.5px] uppercase tracking-wider text-neutral-500 font-sans gs-medium">[Pay]</span>
+                    </div>
+                    <p class="gs-regular text-neutral-600 text-[14px] leading-tight max-w-[200px] text-center">
+                        Completes the payment<br>with <span class="gs-bold text-neutral-900">Google Pay</span>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- TIMELINE -->
+        <div class="relative w-full h-12 my-12 hidden md:block select-none">
+            <div class="absolute top-1/2 left-0 w-full h-[5px] -translate-y-1/2" style="background: linear-gradient(to right, #11BD61 0%, #DBD01F 33%, #FB4943 66%, #3A87FA 100%);"></div>
+            
+            <div class="max-w-5xl w-full mx-auto px-6 sm:px-12 md:px-16 h-full relative">
+                <div class="absolute left-6 sm:left-12 md:left-16 top-0 h-full flex flex-col justify-between items-start text-[11px] text-neutral-400 font-sans tracking-tight z-20">
+                    <span>↑ Google Tap</span>
+                    <span>↓ May Ruzicka</span>
+                </div>
+                
+                <div class="grid grid-cols-3 gap-12 md:gap-16 h-full w-full relative">
+                    <div class="flex items-center justify-center h-full">
+                        <div class="w-[18px] h-[18px] rounded-full bg-white border-[4px] border-[#76C740] z-10 relative"></div>
+                    </div>
+                    <div class="flex items-center justify-center h-full">
+                        <div class="w-[18px] h-[18px] rounded-full bg-white border-[4px] border-[#EB8D31] z-10 relative"></div>
+                    </div>
+                    <div class="flex items-center justify-center h-full">
+                        <div class="w-[18px] h-[18px] rounded-full bg-white border-[4px] border-[#9A689F] z-10 relative"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BOTTOM ROW - May's Projects -->
+        <div class="max-w-5xl w-full mx-auto px-6 sm:px-12 md:px-16 text-center">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 items-start">
+                
+                <div class="flex flex-col items-center text-center space-y-6 group w-full">
+                    <span class="text-neutral-400 text-xs font-sans gs-regular select-none">2024</span>
+                    <p class="gs-regular text-neutral-600 text-[13px] sm:text-[14px] leading-relaxed select-none min-h-[95px] text-center">
+                        For my first project at Miami Ad School, I concepted and designed <span class="gs-bold text-neutral-900">Google Heat Maps</span>. A new Google Maps feature that helps heat-vulnerable New Yorkers find the coolest routes on the hottest days.
+                    </p>
+                    <div class="w-[85%] mx-auto aspect-[1.5] bg-neutral-50 rounded-[1.25rem] border border-neutral-200 flex flex-col items-center justify-center p-4 relative group-hover:border-neutral-300 transition-colors shadow-none select-none">
+                        <div class="w-10 h-10 rounded-full bg-neutral-100 flex items-center justify-center border border-neutral-200/80 mb-2">
+                            <svg class="w-5 h-5 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <span class="text-[8px] uppercase tracking-wider text-neutral-400 gs-semibold">Placeholder #1</span>
+                        <span class="text-[9px] text-neutral-500 gs-regular mt-0.5">Google Heat Maps</span>
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-center text-center space-y-6 group w-full">
+                    <span class="text-neutral-400 text-xs font-sans gs-regular select-none">2025</span>
+                    <p class="gs-regular text-neutral-600 text-[13px] sm:text-[14px] leading-relaxed select-none min-h-[95px] text-center">
+                        When SpecialGuestX hit 50 posts on <span class="gs-bold text-neutral-900">Google's Flow TV</span>, my boss asked for a presentation. I built a filterable website instead — organized by platform, content type, and account — so Google executives could actually navigate the work rather than sit through a deck.
+                    </p>
+                    <div class="w-[85%] mx-auto aspect-[1.5] bg-neutral-50 rounded-[1.25rem] border border-neutral-200 flex flex-col items-center justify-center p-4 relative group-hover:border-neutral-300 transition-colors shadow-none select-none">
+                        <div class="w-10 h-10 rounded-full bg-neutral-100 flex items-center justify-center border border-neutral-200/80 mb-2">
+                            <svg class="w-5 h-5 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <span class="text-[8px] uppercase tracking-wider text-neutral-400 gs-semibold">Placeholder #2</span>
+                        <span class="text-[9px] text-neutral-500 gs-regular mt-0.5">Flow TV Showcase</span>
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-center text-center space-y-6 group w-full">
+                    <span class="text-neutral-400 text-xs font-sans gs-regular select-none">2026</span>
+                    <p class="gs-regular text-neutral-600 text-[13px] sm:text-[14px] leading-relaxed select-none min-h-[95px] text-center">
+                        I'm currently leading a <span class="gs-bold text-neutral-900">Google Lighthouse</span> project called 'Lyft Local' which is a Lyft feature that turns every ride into a guided tour of the city, powered by Google Maps, Gemini, Veo, Lyria, and Nano Banana.
+                    </p>
+                    <div class="w-[85%] mx-auto aspect-[1.5] bg-neutral-50 rounded-[1.25rem] border border-neutral-200 flex flex-col items-center justify-center p-4 relative group-hover:border-neutral-300 transition-colors shadow-none select-none">
+                        <div class="w-10 h-10 rounded-full bg-neutral-100 flex items-center justify-center border border-neutral-200/80 mb-2">
+                            <svg class="w-5 h-5 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path>
+                            </svg>
+                        </div>
+                        <span class="text-[8px] uppercase tracking-wider text-neutral-400 gs-semibold">Placeholder #3</span>
+                        <span class="text-[9px] text-neutral-500 gs-regular mt-0.5">Lyft Local Tour</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SPEND CATEGORIES SECTION -->
+    <section id="spend-categories-track" class="bg-black text-white h-[400vh] relative z-30">
+        <div class="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
+            
+            <div id="case-study-bg" class="absolute inset-0 bg-[#0f0f10] opacity-0 transition-opacity duration-500 z-0"></div>
+
+            <div class="max-w-5xl w-full mx-auto px-6 sm:px-12 md:px-16 h-full flex flex-col justify-center items-center relative">
+                
+                <div id="spend-header" class="absolute top-16 sm:top-24 max-w-2xl mx-auto w-full text-center transition-all duration-300 select-none z-10">
+                    <h2 class="text-4xl sm:text-5xl md:text-6xl gs-bold leading-tight text-white">
+                        Maximize points on<br>these spend categories
+                    </h2>
+                </div>
+
+                <div id="deck-wrapper" class="relative w-[261px] sm:w-[306px] h-[380px] sm:h-[430px] flex flex-col items-center overflow-visible z-20">
+                    
+                    <div id="sc-card-5" class="absolute w-[261px] h-[162px] sm:w-[306px] sm:h-[189px] rounded-[1.6rem] pt-3 sm:pt-4 px-4 sm:px-5 pb-4 text-left bg-[#53b967] text-neutral-950 z-[50] border border-[#4caf50]/20 shadow-lg top-[200px] sm:top-[224px] transition-all duration-500 flex flex-col justify-start">
+                        <div><span class="gs-bold text-lg sm:text-xl leading-none">Streaming Services</span></div>
+                    </div>
+
+                    <div id="sc-card-4" class="absolute w-[261px] h-[162px] sm:w-[306px] sm:h-[189px] rounded-[1.6rem] pt-3 sm:pt-4 px-4 sm:px-5 pb-4 text-left bg-[#3d70f5] text-neutral-950 z-[45] border border-blue-400/10 shadow-lg top-[150px] sm:top-[168px] transition-all duration-500 flex flex-col justify-start">
+                        <div><span class="gs-bold text-lg sm:text-xl leading-none">App Subscriptions</span></div>
+                    </div>
+
+                    <div id="sc-card-3" class="absolute w-[261px] h-[162px] sm:w-[306px] sm:h-[189px] rounded-[1.6rem] pt-3 sm:pt-4 px-4 sm:px-5 pb-4 text-left bg-[#93ced7] text-neutral-950 z-[40] border border-teal-400/20 shadow-lg top-[100px] sm:top-[112px] transition-all duration-500 flex flex-col justify-start">
+                        <div><span class="gs-bold text-lg sm:text-xl leading-none">Entertainment</span></div>
+                    </div>
+
+                    <div id="sc-card-2" class="absolute w-[261px] h-[162px] sm:w-[306px] sm:h-[189px] z-[35] transition-all duration-500 preserve-3d [perspective:1000px] top-[50px] sm:top-[56px]">
+                        <div id="sc-card-2-inner" class="relative w-full h-full duration-500 preserve-3d shadow-lg rounded-[1.6rem]">
+                            <div class="absolute inset-0 w-full h-full rounded-[1.6rem] pt-3 sm:pt-4 px-4 sm:px-5 pb-4 text-left bg-[#f07c3e] text-neutral-950 backface-hidden flex flex-col justify-start border border-orange-400/20">
+                                <div><span class="gs-bold text-lg sm:text-xl leading-none">Food & Beverage</span></div>
+                            </div>
+                            <div class="absolute inset-0 w-full h-full rounded-[1.6rem] bg-[#151516] text-white backface-hidden [transform:rotateY(180deg)] border border-neutral-800 flex flex-col items-center justify-between p-4">
+                                <div class="flex flex-col items-center justify-center flex-grow">
+                                    <svg viewBox="0 0 100 50" class="w-24 h-12">
+                                        <polygon points="50,5 25,45 75,45" fill="none" stroke="#f05a28" stroke-width="3" />
+                                        <polygon points="50,10 30,42 70,42" fill="none" stroke="#ffcc00" stroke-width="1" opacity="0.8" />
+                                        <text x="50" y="32" font-family="'Product Sans', sans-serif" font-weight="900" font-size="12" fill="#ffffff" text-anchor="middle" letter-spacing="1">Doritos</text>
+                                    </svg>
+                                </div>
+                                <div class="pb-1">
+                                    <span class="text-[9px] tracking-[0.18em] gs-bold text-neutral-400 uppercase">FOR THE BOLD.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="sc-card-1" class="absolute w-[261px] h-[162px] sm:w-[306px] sm:h-[189px] z-[30] transition-all duration-500 preserve-3d [perspective:1000px] top-0">
+                        <div id="sc-card-1-inner" class="relative w-full h-full duration-500 preserve-3d shadow-lg rounded-[1.6rem]">
+                            <div class="absolute inset-0 w-full h-full rounded-[1.6rem] pt-3 sm:pt-4 px-4 sm:px-5 pb-4 text-left bg-[#ec4cb0] text-neutral-950 backface-hidden flex flex-col justify-start border border-pink-400/20">
+                                <div><span class="gs-bold text-lg sm:text-xl leading-none">Rideshare & Transit</span></div>
+                            </div>
+                            <div class="absolute inset-0 w-full h-full rounded-[1.6rem] bg-[#1e131c] text-white backface-hidden [transform:rotateY(180deg)] border border-[#311f30] flex flex-col items-center justify-center p-4">
+                                <div class="flex items-center gap-1.5 scale-95 sm:scale-100">
+                                    <span class="text-white gs-bold font-sans text-2xl sm:text-3xl tracking-tight">Check</span>
+                                    <span class="text-[#ec4cb0] gs-bold font-sans text-2xl sm:text-3xl tracking-tight">lyft</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- LYFT SHOWCASE FLOATS -->
+                    <div id="lyft-billboard" class="absolute top-0 left-0 w-[261px] sm:w-[306px] h-[162px] sm:h-[189px] bg-[#1a1a1c] border border-neutral-800/80 rounded-[1.6rem] overflow-hidden opacity-0 pointer-events-none transition-all duration-500 z-10 shadow-none">
+                        <svg viewBox="0 0 306 189" class="w-full h-full">
+                            <defs>
+                                <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stop-color="#4285F4" stop-opacity="0.9" />
+                                    <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.3" />
+                                </linearGradient>
+                            </defs>
+                            <rect width="306" height="189" fill="url(#skyGrad)" />
+                            <rect x="220" y="50" width="35" height="139" fill="#212529" opacity="0.3" />
+                            <rect x="260" y="30" width="50" height="159" fill="#212529" opacity="0.4" />
+                            <rect x="10" y="80" width="50" height="109" fill="#212529" opacity="0.2" />
+                            <rect x="45" y="110" width="4" height="79" fill="#111111" />
+                            <rect x="180" y="100" width="5" height="89" fill="#111111" />
+                            <g transform="translate(10, 50)">
+                                <rect width="80" height="52" rx="3" fill="#f8f9fa" stroke="#e0e0e0" stroke-width="1.5" />
+                                <text x="6" y="15" font-family="'Figtree', sans-serif" font-weight="700" font-size="5.5" fill="#212529">Don't forget</text>
+                                <text x="6" y="23" font-family="'Figtree', sans-serif" font-weight="700" font-size="5.5" fill="#212529">you have</text>
+                                <text x="6" y="31" font-family="'Figtree', sans-serif" font-weight="700" font-size="5.5" fill="#212529">options.</text>
+                                <text x="6" y="44" font-family="'Product Sans', sans-serif" font-weight="700" font-size="4" fill="#212529">Check <tspan fill="#ff00bf">lyft</tspan></text>
+                            </g>
+                            <g transform="translate(125, 35)">
+                                <rect width="145" height="85" rx="5" fill="#1e131c" stroke="#311f30" stroke-width="2" />
+                                <text x="14" y="30" font-family="'Product Sans', 'Google Sans', sans-serif" font-weight="700" font-size="14" fill="#ffffff" letter-spacing="-0.03em">Check</text>
+                                <text x="56" y="30" font-family="'Product Sans', 'Google Sans', sans-serif" font-weight="700" font-size="14" fill="#ec4cb0" letter-spacing="-0.03em">lyft</text>
+                                <rect x="14" y="48" width="117" height="24" rx="4" fill="#ec4cb0" />
+                                <text x="72.5" y="63" font-family="'Product Sans', sans-serif" font-weight="700" font-size="8" fill="#1e131c" text-anchor="middle" letter-spacing="-0.02em">BLEED HALLOWEEN</text>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <div id="lyft-insight" class="absolute top-0 left-0 w-[261px] sm:w-[306px] h-[162px] sm:h-[189px] bg-white rounded-[1.6rem] p-6 shadow-none text-center flex flex-col items-center justify-center border border-neutral-100 opacity-0 pointer-events-none transition-all duration-500 z-10">
+                        <p class="text-neutral-950 text-[18px] sm:text-[21px] lg:text-[23px] leading-[1.25] tracking-tight px-1.5 sm:px-3" style="font-family: 'Figtree', sans-serif; font-weight: 300 !important;">
+                            I tap into the uncomfortable truths surrounding human behavior
+                        </p>
+                    </div>
+
+                    <div id="lyft-narrative" class="absolute top-0 left-0 w-[261px] sm:w-[306px] h-[162px] sm:h-[189px] bg-[#1a1a1c]/95 border border-neutral-800/60 rounded-[1.6rem] p-4 sm:p-5 shadow-none text-left opacity-0 pointer-events-none transition-all duration-500 z-10 overflow-hidden">
+                        <p class="gs-regular text-neutral-400 text-[9px] sm:text-[10px] lg:text-[11.5px] leading-relaxed select-none">
+                            Most people have both Uber and Lyft and they're not loyal to either one. Instead of fighting that, we just said it out loud. What started as an honest insight turned into a campaign with 135 OOH placements across the nation and 467 million impressions, surpassing planned performance by 37%. I also led the case study production because the work isn't done until the story of the work is told creatively.
+                        </p>
+                    </div>
+
+                    <div id="lyft-subway" class="absolute top-0 left-0 w-[261px] sm:w-[306px] h-[162px] sm:h-[189px] bg-[#0c0c0d] border border-neutral-800/80 rounded-[1.6rem] overflow-hidden opacity-0 pointer-events-none transition-all duration-500 z-10 shadow-none">
+                        <div class="relative w-full h-full">
+                            <div class="absolute inset-y-0 left-0 w-full h-[70%] bg-neutral-900 z-0 border-b-4 border-amber-600/30 overflow-hidden">
+                                <div class="absolute inset-y-0 w-[180%] h-full flex items-center gap-2 animate-[subway-travel_2s_linear_infinite] opacity-60">
+                                    <div class="w-[45%] h-[80%] bg-neutral-800 rounded-md border border-neutral-700 flex items-center justify-around p-1">
+                                        <div class="w-6 h-5 bg-amber-500/20 rounded-sm"></div>
+                                        <div class="w-6 h-5 bg-amber-500/20 rounded-sm"></div>
+                                        <div class="w-6 h-5 bg-amber-500/20 rounded-sm"></div>
+                                    </div>
+                                    <div class="w-[45%] h-[80%] bg-neutral-800 rounded-md border border-neutral-700 flex items-center justify-around p-1">
+                                        <div class="w-6 h-5 bg-amber-500/20 rounded-sm"></div>
+                                        <div class="w-6 h-5 bg-amber-500/20 rounded-sm"></div>
+                                        <div class="w-6 h-5 bg-amber-500/20 rounded-sm"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/20 to-transparent z-10 pointer-events-none"></div>
+                            <div class="absolute left-4 inset-y-0 w-2 bg-[#023e8a] border-r border-black z-20"></div>
+                            <div class="absolute right-8 inset-y-0 w-2 bg-[#023e8a] border-l border-black z-20"></div>
+                            <div class="absolute bottom-2 left-1/2 -translate-x-1/2 w-[55%] h-[82%] bg-[#1c121b] border-2 border-neutral-800 rounded-lg p-2 sm:p-2.5 flex flex-col justify-between z-20 shadow-2xl">
+                                <p class="font-sans gs-bold text-white text-[6.5px] sm:text-[7.5px] lg:text-[8.5px] leading-tight text-left">
+                                    We're not saying break up.<br>We're just saying look around a bit.
+                                </p>
+                                <div class="flex items-center gap-0.5 mt-auto">
+                                    <span class="text-white font-sans gs-bold text-[4.5px]">Check</span>
+                                    <span class="text-[#ec4cb0] font-sans gs-bold text-[4.5px]">lyft</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DORITOS SHOWCASE FLOATS -->
+                    <div id="doritos-variety" class="absolute top-0 left-0 w-[261px] sm:w-[306px] h-[162px] sm:h-[189px] bg-white border border-neutral-200 rounded-[1.6rem] overflow-hidden opacity-0 pointer-events-none transition-all duration-500 z-10 p-3.5 text-neutral-950 flex flex-col justify-between shadow-none">
+                        <div class="flex items-center justify-between border-b border-neutral-100 pb-1.5">
+                            <span class="text-[12px] font-sans font-black tracking-widest text-[#d62027] uppercase">Variety</span>
+                            <span class="text-[7px] text-neutral-400 font-sans">SUBSCRIBE · LOGIN</span>
+                        </div>
+                        <div class="my-1.5 text-left">
+                            <span class="text-[7px] uppercase tracking-wider text-neutral-400 font-sans font-bold">Home > TV > News</span>
+                            <h4 class="text-[9.5px] sm:text-[11px] font-sans font-black leading-tight text-neutral-900 mt-0.5">
+                                Doritos Gives Nod to 25 Semi-Finalists to Revive Super Bowl 'Crash' Commercial Contest
+                            </h4>
+                        </div>
+                        <div class="flex gap-2.5 items-stretch flex-1 min-h-0">
+                            <div class="w-[32%] bg-sky-200 rounded overflow-hidden flex items-center justify-center relative flex-shrink-0">
+                                <div class="absolute inset-0 bg-gradient-to-br from-pink-400/20 to-orange-400/20"></div>
+                                <div class="flex gap-1 items-end h-full pb-1 scale-75">
+                                    <div class="w-4 h-8 bg-neutral-900 rounded-t"></div>
+                                    <div class="w-4 h-10 bg-blue-600 rounded-t"></div>
+                                    <div class="w-4 h-8 bg-orange-600 rounded-t"></div>
+                                </div>
+                            </div>
+                            <div class="flex-1 text-left flex flex-col justify-between py-0.5">
+                                <p class="text-[8px] sm:text-[9px] text-neutral-500 font-sans leading-snug">
+                                    Variety takes an exclusive look at the fan-made, self-produced commercial that crashed the charts and landed directly in Doritos' top choices...
+                                </p>
+                                <div class="flex items-center gap-1 mt-auto">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-red-600"></span>
+                                    <span class="text-[6.5px] font-bold text-neutral-400 uppercase tracking-wider">Most Popular</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="doritos-insight" class="absolute top-0 left-0 w-[261px] sm:w-[306px] h-[162px] sm:h-[189px] bg-white rounded-[1.6rem] p-6 shadow-none text-center flex flex-col items-center justify-center border border-neutral-100 opacity-0 pointer-events-none transition-all duration-500 z-10">
+                        <p class="text-neutral-950 text-[18px] sm:text-[21px] lg:text-[23px] leading-[1.25] tracking-tight px-1.5 sm:px-3" style="font-family: 'Figtree', sans-serif; font-weight: 300 !important;">
+                            I tap into every role the idea needs and fill them myself
+                        </p>
+                    </div>
+
+                    <div id="doritos-narrative" class="absolute top-0 left-0 w-[261px] sm:w-[306px] h-[162px] sm:h-[189px] bg-[#1a1a1c]/95 border border-neutral-800/60 rounded-[1.6rem] p-4 sm:p-5 shadow-none text-left opacity-0 pointer-events-none transition-all duration-500 z-10 overflow-hidden">
+                        <p class="gs-regular text-neutral-400 text-[9.5px] sm:text-[10px] lg:text-[11px] leading-relaxed select-none">
+                            We had five friends, a mandate to use Doritos' pre-approved music, and a deadline. So we flipped the beats into an original song, turned our apartments into a set, and made a Super Bowl ad from scratch. I directed, art directed, styled, produced, and sang on it. Variety Magazine noticed. So did AdWeek and Ad Age. We didn't win, but we made the top 25 out of thousands of entries worldwide.
+                        </p>
+                    </div>
+
+                    <div id="doritos-characters" class="absolute top-0 left-0 w-[261px] sm:w-[306px] h-[162px] sm:h-[189px] bg-[#0c0c0d] border border-neutral-800/80 rounded-[1.6rem] overflow-hidden opacity-0 pointer-events-none transition-all duration-500 z-10 shadow-none">
+                        <div class="relative w-full h-full bg-[#1e1e21]">
+                            <svg viewBox="0 0 306 189" class="w-full h-full">
+                                <rect width="306" height="189" fill="#9cd6f4" />
+                                <circle cx="50" cy="40" r="30" fill="#ffffff" opacity="0.4" filter="blur(4px)" />
+                                <circle cx="250" cy="50" r="25" fill="#ffffff" opacity="0.3" filter="blur(3px)" />
+                                <g transform="translate(10, 0)">
+                                    <path d="M40,140 Q60,110 80,140 L90,190 L30,190 Z" fill="#bfa15f" />
+                                    <path d="M40,140 L80,140 L75,190 L45,190 Z" fill="#2d2219" />
+                                    <rect x="53" y="115" width="14" height="20" fill="#cca385" />
+                                    <circle cx="60" cy="100" r="20" fill="#cca385" />
+                                    <rect x="56" y="105" width="8" height="3" fill="#ffe100" rx="0.5" />
+                                    <rect x="48" y="94" width="24" height="8" rx="2" fill="#ffe100" stroke="#000" stroke-width="1" />
+                                    <line x1="48" y1="98" x2="72" y2="98" stroke="#000" stroke-width="0.5" />
+                                    <path d="M35,82 Q60,82 85,82 L80,62 Q60,65 40,62 Z" fill="#111111" />
+                                    <path d="M32,82 Q60,88 88,82 L93,87 Q60,93 27,87 Z" fill="#222222" />
+                                    <path d="M50,125 Q60,135 70,125" fill="none" stroke="#ffd700" stroke-width="2.5" />
+                                </g>
+                                <g transform="translate(110, 10)">
+                                    <path d="M20,130 Q40,105 60,130 L70,180 L10,180 Z" fill="#0066cc" />
+                                    <rect x="35" y="105" width="10" height="15" fill="#d9b396" />
+                                    <circle cx="40" cy="92" r="16" fill="#d9b396" />
+                                    <rect x="37" y="97" width="6" height="2" fill="#ffe100" rx="0.5" />
+                                    <rect x="32" y="88" width="16" height="6" rx="1.5" fill="#333333" />
+                                    <path d="M32,112 Q40,119 48,112" fill="none" stroke="#ffd700" stroke-width="2" />
+                                </g>
+                                <g transform="translate(190, 15)">
+                                    <path d="M20,125 Q45,100 70,125 L80,180 L10,180 Z" fill="#e0531b" />
+                                    <rect x="40" y="102" width="12" height="15" fill="#b38666" />
+                                    <circle cx="46" cy="88" r="17" fill="#b38666" />
+                                    <rect x="43" y="93" width="6" height="2" fill="#ffe100" rx="0.5" />
+                                    <circle cx="39" cy="85" r="5" fill="none" stroke="#ffd700" stroke-width="1.5" />
+                                    <circle cx="53" cy="85" r="5" fill="none" stroke="#ffd700" stroke-width="1.5" />
+                                    <line x1="44" y1="85" x2="48" y2="85" stroke="#ffd700" stroke-width="1.5" />
+                                    <path d="M29,78 Q46,58 63,78 Z" fill="#e6007e" />
+                                    <rect x="27" y="74" width="38" height="6" rx="1" fill="#c4006b" />
+                                    <path d="M36,110 Q46,118 56,110" fill="none" stroke="#ffd700" stroke-width="2" />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SCROLL & TRANSFORMATION SCRIPT -->
+    <script>
+        const scrollTrack = document.getElementById('scroll-track');
+        const bgGradient = document.getElementById('bg-gradient');
+        const bgWhite = document.getElementById('bg-white');
+        const heroText = document.getElementById('hero-text');
+        const scrollGuide = document.getElementById('scroll-guide');
+        
+        const cardArtDirector = document.getElementById('card-art-director');
+        const cardDesigner = document.getElementById('card-designer');
+        const cardCreativeTechnologist = document.getElementById('card-creative-technologist');
+        const cardVisualStoryteller = document.getElementById('card-visual-storyteller');
+        const labelMay = document.getElementById('label-may');
+        const labelArt = document.getElementById('label-art');
+
+        const spendTrack = document.getElementById('spend-categories-track');
+        const caseBg = document.getElementById('case-study-bg');
+        const spendHeader = document.getElementById('spend-header');
+        const deckWrapper = document.getElementById('deck-wrapper');
+        const scCard5 = document.getElementById('sc-card-5');
+        const scCard4 = document.getElementById('sc-card-4');
+        const scCard3 = document.getElementById('sc-card-3');
+        const scCard2 = document.getElementById('sc-card-2');
+        const scCard2Inner = document.getElementById('sc-card-2-inner');
+        const scCard1 = document.getElementById('sc-card-1');
+        const scCard1Inner = document.getElementById('sc-card-1-inner');
+
+        const showcaseBillboard = document.getElementById('lyft-billboard');
+        const showcaseInsight = document.getElementById('lyft-insight');
+        const showcaseNarrative = document.getElementById('lyft-narrative');
+        const showcaseSubway = document.getElementById('lyft-subway');
+
+        const doritosBillboard = document.getElementById('doritos-variety');
+        const doritosInsight = document.getElementById('doritos-insight');
+        const doritosNarrative = document.getElementById('doritos-narrative');
+        const doritosSubway = document.getElementById('doritos-characters');
+
+        const cards = [cardArtDirector, cardDesigner, cardCreativeTechnologist, cardVisualStoryteller];
+        function initCards() {
+            cards.forEach(card => {
+                card.style.left = '50%';
+                card.style.top = '50%';
+                card.style.transform = 'translate(-50%, -50%)';
+            });
+        }
+        initCards();
+
+        function updateAnimation() {
+            const rect = scrollTrack.getBoundingClientRect();
+            const totalScrollable = scrollTrack.clientHeight - window.innerHeight;
+            const scrolled = -rect.top;
+            let progress = Math.max(0, Math.min(scrolled / totalScrollable, 1));
+            const easeProgress = easeInOutQuad(progress);
+
+            bgGradient.style.opacity = easeProgress;
+            bgWhite.style.opacity = 1 - easeProgress;
+
+            if (progress > 0.05) {
+                scrollGuide.style.opacity = 0;
+            } else {
+                scrollGuide.style.opacity = 1 - (progress * 20);
+            }
+
+            if (progress > 0.25) {
+                const textProgress = (progress - 0.25) / 0.75;
+                heroText.style.opacity = textProgress;
+                heroText.style.transform = `translateY(${(1 - textProgress) * 30}px) scale(${0.96 + (textProgress * 0.04)})`;
+            } else {
+                heroText.style.opacity = 0;
+                heroText.style.transform = `translateY(30px) scale(0.96)`;
+            }
+
+            labelMay.style.opacity = 1 - easeProgress;
+            labelArt.style.opacity = easeProgress;
+
+            const isMobile = window.innerWidth < 768;
+            const targets = {
+                artDirector: { x: isMobile ? -20 : -22, y: isMobile ? -38 : -43 },
+                designer: { x: isMobile ? 32 : 42, y: isMobile ? -12 : -15 },
+                creativeTechnologist: { x: isMobile ? -30 : -34, y: isMobile ? 10 : 12 },
+                visualStoryteller: { x: isMobile ? 22 : 24, y: isMobile ? 30 : 34 }
+            };
+
+            applyFlatPosition(cardArtDirector, targets.artDirector, easeProgress, true);
+            applyFlatPosition(cardDesigner, targets.designer, easeProgress, false);
+            applyFlatPosition(cardCreativeTechnologist, targets.creativeTechnologist, easeProgress, false);
+            applyFlatPosition(cardVisualStoryteller, targets.visualStoryteller, easeProgress, false);
+
+            const spendRect = spendTrack.getBoundingClientRect();
+            const spendTotal = spendTrack.clientHeight - window.innerHeight;
+            const spendScrolled = -spendRect.top;
+            let sProgress = Math.max(0, Math.min(spendScrolled / spendTotal, 1));
+
+            const centerYShift = isMobile ? 109 : 120;
+
+            if (sProgress <= 0.50) {
+                const localProgress = sProgress / 0.50;
+
+                if (localProgress <= 0.25) {
+                    const step = localProgress / 0.25;
+                    const easeStep = easeInOutQuad(step);
+
+                    spendHeader.style.opacity = (1 - easeStep * 0.4).toString();
+                    spendHeader.style.transform = `translateY(${-easeStep * 10}px)`;
+                    caseBg.style.opacity = '0';
+
+                    scCard5.style.opacity = easeStep.toString();
+                    scCard4.style.opacity = easeStep.toString();
+                    scCard3.style.opacity = easeStep.toString();
+                    scCard2.style.opacity = easeStep.toString();
+                    scCard1.style.opacity = easeStep.toString();
+
+                    const diffY = 1 - easeStep;
+                    const startY = 320; 
+                    scCard5.style.transform = `translateY(${diffY * startY}px) scale(1) rotate(0deg)`;
+                    scCard4.style.transform = `translateY(${diffY * startY}px) scale(1) rotate(0deg)`;
+                    scCard3.style.transform = `translateY(${diffY * startY}px) scale(1) rotate(0deg)`;
+                    scCard2.style.transform = `translateY(${diffY * startY}px) scale(1) rotate(0deg)`;
+                    scCard1.style.transform = `translateY(${diffY * startY}px) scale(1) rotate(0deg)`;
+
+                    scCard1Inner.style.transform = 'rotateY(0deg)';
+                    scCard2Inner.style.transform = 'rotateY(0deg)';
+
+                    fadeShowcaseElements(0, 0, isMobile, 'lyft');
+                    fadeShowcaseElements(0, 0, isMobile, 'doritos');
+                }
+                else if (localProgress > 0.25 && localProgress <= 0.45) {
+                    const step = (localProgress - 0.25) / 0.20;
+                    const easeStep = easeInOutQuad(step);
+
+                    spendHeader.style.opacity = (0.6 * (1 - easeStep)).toString();
+                    spendHeader.style.transform = `translateY(${-10 - easeStep * 15}px)`;
+                    caseBg.style.opacity = '0';
+
+                    scCard5.style.opacity = '1';
+                    scCard4.style.opacity = '1';
+                    scCard3.style.opacity = '1';
+                    scCard2.style.opacity = '1';
+                    scCard1.style.opacity = '1';
+
+                    scCard5.style.transform = 'translateY(0) scale(1) rotate(0deg)';
+                    scCard4.style.transform = 'translateY(0) scale(1) rotate(0deg)';
+                    scCard3.style.transform = 'translateY(0) scale(1) rotate(0deg)';
+                    scCard2.style.transform = 'translateY(0) scale(1) rotate(0deg)';
+                    scCard1.style.transform = 'translateY(0) scale(1) rotate(0deg)';
+
+                    scCard1Inner.style.transform = 'rotateY(0deg)';
+                    scCard2Inner.style.transform = 'rotateY(0deg)';
+
+                    fadeShowcaseElements(0, 0, isMobile, 'lyft');
+                    fadeShowcaseElements(0, 0, isMobile, 'doritos');
+                }
+                else if (localProgress > 0.45 && localProgress <= 0.68) {
+                    const step = (localProgress - 0.45) / 0.23;
+                    const easeStep = easeInOutQuad(step);
+
+                    caseBg.style.opacity = (easeStep * 0.95).toString();
+                    spendHeader.style.opacity = '0';
+
+                    scCard5.style.opacity = (1 - easeStep).toString();
+                    scCard4.style.opacity = (1 - easeStep).toString();
+                    scCard3.style.opacity = (1 - easeStep).toString();
+                    scCard2.style.opacity = (1 - easeStep).toString();
+
+                    scCard5.style.transform = `translateY(${easeStep * 180}px) rotate(${easeStep * 6}deg)`;
+                    scCard4.style.transform = `translateY(${easeStep * 180}px) rotate(${easeStep * -4}deg)`;
+                    scCard3.style.transform = `translateY(${easeStep * 180}px) rotate(${easeStep * 5}deg)`;
+                    scCard2.style.transform = `translateY(${easeStep * 180}px) rotate(${easeStep * -3}deg)`;
+
+                    const currentY = easeStep * centerYShift;
+                    scCard1.style.transform = `translateY(${currentY}px) scale(1)`;
+                    scCard1.style.opacity = '1';
+
+                    scCard1Inner.style.transform = 'rotateY(0deg)';
+                    scCard2Inner.style.transform = 'rotateY(0deg)';
+
+                    fadeShowcaseElements(0, currentY, isMobile, 'lyft');
+                    fadeShowcaseElements(0, 0, isMobile, 'doritos');
+                }
+                else if (localProgress > 0.68 && localProgress <= 0.85) {
+                    caseBg.style.opacity = '0.95';
+                    spendHeader.style.opacity = '0';
+
+                    scCard5.style.opacity = '0';
+                    scCard4.style.opacity = '0';
+                    scCard3.style.opacity = '0';
+                    scCard2.style.opacity = '0';
+
+                    scCard1.style.transform = `translateY(${centerYShift}px) scale(1)`;
+                    scCard1.style.opacity = '1';
+
+                    const step = (localProgress - 0.68) / 0.17;
+                    const easeStep = easeInOutQuad(step);
+
+                    scCard1Inner.style.transform = `rotateY(${easeStep * 180}deg)`;
+                    scCard2Inner.style.transform = 'rotateY(0deg)';
+
+                    fadeShowcaseElements(easeStep, centerYShift, isMobile, 'lyft');
+                    fadeShowcaseElements(0, 0, isMobile, 'doritos');
+                }
+                else {
+                    caseBg.style.opacity = '0.95';
+                    spendHeader.style.opacity = '0';
+
+                    scCard5.style.opacity = '0';
+                    scCard4.style.opacity = '0';
+                    scCard3.style.opacity = '0';
+                    scCard2.style.opacity = '0';
+
+                    scCard1.style.transform = `translateY(${centerYShift}px) scale(1)`;
+                    scCard1.style.opacity = '1';
+
+                    scCard1Inner.style.transform = 'rotateY(180deg)';
+                    scCard2Inner.style.transform = 'rotateY(0deg)';
+
+                    fadeShowcaseElements(1, centerYShift, isMobile, 'lyft');
+                    fadeShowcaseElements(0, 0, isMobile, 'doritos');
+                }
+            }
+            else if (sProgress > 0.50 && sProgress <= 0.65) {
+                const step = (sProgress - 0.50) / 0.15;
+                const easeStep = easeInOutQuad(step);
+
+                caseBg.style.opacity = (0.95 * (1 - easeStep)).toString();
+                spendHeader.style.opacity = '0';
+
+                fadeShowcaseElements(1 - easeStep, centerYShift, isMobile, 'lyft');
+                fadeShowcaseElements(0, 0, isMobile, 'doritos');
+
+                scCard1Inner.style.transform = `rotateY(${(1 - easeStep) * 180}deg)`;
+                scCard2Inner.style.transform = 'rotateY(0deg)';
+
+                const currentY = (1 - easeStep) * centerYShift;
+                scCard1.style.transform = `translateY(${currentY}px) scale(1)`;
+                scCard1.style.opacity = '1';
+
+                scCard5.style.opacity = easeStep.toString();
+                scCard4.style.opacity = easeStep.toString();
+                scCard3.style.opacity = easeStep.toString();
+                scCard2.style.opacity = easeStep.toString();
+
+                const diffY = 1 - easeStep;
+                scCard5.style.transform = `translateY(${diffY * 180}px) rotate(${diffY * 6}deg)`;
+                scCard4.style.transform = `translateY(${diffY * 180}px) rotate(${diffY * -4}deg)`;
+                scCard3.style.transform = `translateY(${diffY * 180}px) rotate(${diffY * 5}deg)`;
+                scCard2.style.transform = `translateY(${diffY * 180}px) rotate(${diffY * -3}deg)`;
+            }
+            else {
+                const localProgress = (sProgress - 0.65) / 0.35;
+
+                if (localProgress <= 0.20) {
+                    caseBg.style.opacity = '0';
+                    spendHeader.style.opacity = '0';
+
+                    scCard5.style.opacity = '1';
+                    scCard4.style.opacity = '1';
+                    scCard3.style.opacity = '1';
+                    scCard2.style.opacity = '1';
+                    scCard1.style.opacity = '1';
+
+                    scCard5.style.transform = 'translateY(0) scale(1) rotate(0deg)';
+                    scCard4.style.transform = 'translateY(0) scale(1) rotate(0deg)';
+                    scCard3.style.transform = 'translateY(0) scale(1) rotate(0deg)';
+                    scCard2.style.transform = 'translateY(0) scale(1) rotate(0deg)';
+                    scCard1.style.transform = 'translateY(0) scale(1) rotate(0deg)';
+
+                    scCard1Inner.style.transform = 'rotateY(0deg)';
+                    scCard2Inner.style.transform = 'rotateY(0deg)';
+
+                    fadeShowcaseElements(0, 0, isMobile, 'lyft');
+                    fadeShowcaseElements(0, 0, isMobile, 'doritos');
+                }
+                else if (localProgress > 0.20 && localProgress <= 0.55) {
+                    const step = (localProgress - 0.20) / 0.35;
+                    const easeStep = easeInOutQuad(step);
+
+                    caseBg.style.opacity = (easeStep * 0.95).toString();
+                    spendHeader.style.opacity = '0';
+
+                    scCard5.style.opacity = (1 - easeStep).toString();
+                    scCard4.style.opacity = (1 - easeStep).toString();
+                    scCard3.style.opacity = (1 - easeStep).toString();
+                    scCard1.style.opacity = (1 - easeStep).toString();
+
+                    scCard5.style.transform = `translateY(${easeStep * 180}px) rotate(${easeStep * 6}deg)`;
+                    scCard4.style.transform = `translateY(${easeStep * 180}px) rotate(${easeStep * -4}deg)`;
+                    scCard3.style.transform = `translateY(${easeStep * 180}px) rotate(${easeStep * 5}deg)`;
+                    scCard1.style.transform = `translateY(${easeStep * 180}px) rotate(${easeStep * -3}deg)`;
+
+                    const currentY = 50 + easeStep * (centerYShift - 50);
+                    scCard2.style.transform = `translateY(${currentY - 50}px) scale(1)`;
+                    scCard2.style.opacity = '1';
+
+                    scCard1Inner.style.transform = 'rotateY(0deg)';
+                    scCard2Inner.style.transform = 'rotateY(0deg)';
+
+                    fadeShowcaseElements(0, 0, isMobile, 'lyft');
+                    fadeShowcaseElements(0, currentY, isMobile, 'doritos');
+                }
+                else if (localProgress > 0.55 && localProgress <= 0.75) {
+                    caseBg.style.opacity = '0.95';
+                    spendHeader.style.opacity = '0';
+
+                    scCard5.style.opacity = '0';
+                    scCard4.style.opacity = '0';
+                    scCard3.style.opacity = '0';
+                    scCard1.style.opacity = '0';
+
+                    const currentYShift = centerYShift - 50;
+                    scCard2.style.transform = `translateY(${currentYShift}px) scale(1)`;
+                    scCard2.style.opacity = '1';
+
+                    const step = (localProgress - 0.55) / 0.20;
+                    const easeStep = easeInOutQuad(step);
+
+                    scCard1Inner.style.transform = 'rotateY(0deg)';
+                    scCard2Inner.style.transform = `rotateY(${easeStep * 180}deg)`;
+
+                    fadeShowcaseElements(0, 0, isMobile, 'lyft');
+                    fadeShowcaseElements(easeStep, centerYShift, isMobile, 'doritos');
+                }
+                else {
+                    caseBg.style.opacity = '0.95';
+                    spendHeader.style.opacity = '0';
+
+                    scCard5.style.opacity = '0';
+                    scCard4.style.opacity = '0';
+                    scCard3.style.opacity = '0';
+                    scCard1.style.opacity = '0';
+
+                    const currentYShift = centerYShift - 50;
+                    scCard2.style.transform = `translateY(${currentYShift}px) scale(1)`;
+                    scCard2.style.opacity = '1';
+
+                    scCard1Inner.style.transform = 'rotateY(0deg)';
+                    scCard2Inner.style.transform = 'rotateY(180deg)';
+
+                    fadeShowcaseElements(0, 0, isMobile, 'lyft');
+                    fadeShowcaseElements(1, centerYShift, isMobile, 'doritos');
+                }
+            }
+
+            requestAnimationFrame(updateAnimation);
+        }
+
+        function fadeShowcaseElements(progress, currentY, isMobile, type) {
+            const opacityStr = progress.toString();
+            const isDesktop = window.innerWidth >= 1024;
+
+            const billboard = type === 'lyft' ? showcaseBillboard : doritosBillboard;
+            const insight = type === 'lyft' ? showcaseInsight : doritosInsight;
+            const narrative = type === 'lyft' ? showcaseNarrative : doritosNarrative;
+            const subway = type === 'lyft' ? showcaseSubway : doritosSubway;
+
+            const otherType = type === 'lyft' ? 'doritos' : 'lyft';
+            const otherBillboard = otherType === 'lyft' ? showcaseBillboard : doritosBillboard;
+            const otherInsight = otherType === 'lyft' ? showcaseInsight : doritosInsight;
+            const otherNarrative = otherType === 'lyft' ? showcaseNarrative : doritosNarrative;
+            const otherSubway = otherType === 'lyft' ? showcaseSubway : doritosSubway;
+
+            if (progress === 0) {
+                billboard.style.opacity = '0';
+                billboard.style.pointerEvents = 'none';
+                insight.style.opacity = '0';
+                insight.style.pointerEvents = 'none';
+                narrative.style.opacity = '0';
+                narrative.style.pointerEvents = 'none';
+                subway.style.opacity = '0';
+                subway.style.pointerEvents = 'none';
+                return;
+            }
+
+            otherBillboard.style.opacity = '0';
+            otherBillboard.style.pointerEvents = 'none';
+            otherInsight.style.opacity = '0';
+            otherInsight.style.pointerEvents = 'none';
+            otherNarrative.style.opacity = '0';
+            otherNarrative.style.pointerEvents = 'none';
+            otherSubway.style.opacity = '0';
+            otherSubway.style.pointerEvents = 'none';
+
+            if (isDesktop) {
+                const bX = -320 * progress;
+                const bY = currentY + (-40 - currentY) * progress;
+                billboard.style.opacity = opacityStr;
+                billboard.style.transform = `translate(${bX}px, ${bY}px) scale(${0.8 + 0.2 * progress})`;
+
+                const iX = 280 * progress;
+                const iY = currentY + (-80 - currentY) * progress;
+                insight.style.opacity = opacityStr;
+                insight.style.transform = `translate(${iX}px, ${iY}px) scale(${0.8 + 0.2 * progress})`;
+
+                const nX = -300 * progress;
+                const nY = currentY + (290 - currentY) * progress;
+                narrative.style.opacity = opacityStr;
+                narrative.style.transform = `translate(${nX}px, ${nY}px) scale(${0.8 + 0.2 * progress})`;
+
+                const sX = 320 * progress;
+                const sY = currentY + (240 - currentY) * progress;
+                subway.style.opacity = opacityStr;
+                subway.style.transform = `translate(${sX}px, ${sY}px) scale(${0.8 + 0.2 * progress})`;
+
+                const pointerVal = progress > 0.5 ? 'auto' : 'none';
+                billboard.style.pointerEvents = pointerVal;
+                insight.style.pointerEvents = pointerVal;
+                narrative.style.pointerEvents = pointerVal;
+                subway.style.pointerEvents = pointerVal;
+
+            } else {
+                const bY = currentY + (-240 - currentY) * progress;
+                billboard.style.opacity = opacityStr;
+                billboard.style.transform = `translate(0px, ${bY}px) scale(${0.85 + 0.15 * progress})`;
+
+                const iY = currentY + (-120 - currentY) * progress;
+                insight.style.opacity = opacityStr;
+                insight.style.transform = `translate(0px, ${iY}px) scale(${0.85 + 0.15 * progress})`;
+
+                const nY = currentY + (120 - currentY) * progress;
+                narrative.style.opacity = opacityStr;
+                narrative.style.transform = `translate(0px, ${nY}px) scale(${0.85 + 0.15 * progress})`;
+
+                const sY = currentY + (240 - currentY) * progress;
+                subway.style.opacity = opacityStr;
+                subway.style.transform = `translate(0px, ${sY}px) scale(${0.85 + 0.15 * progress})`;
+            }
+        }
+
+        function applyFlatPosition(element, target, progress, isAnchor) {
+            const x = target.x * progress;
+            const y = target.y * progress;
+            element.style.opacity = isAnchor ? 1 : progress;
+            element.style.transform = `translate(calc(-50% + ${x}vw), calc(-50% + ${y}vh))`;
+        }
+
+        function easeInOutQuad(x) {
+            return x < 0.5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2;
+        }
+
+        window.onload = function () {
+            initCards();
+            updateAnimation();
+        }
+
+        updateAnimation();
+
+        cardArtDirector.addEventListener('click', () => {
+            const scrollHeight = scrollTrack.clientHeight * 0.6;
+            window.scrollTo({ top: scrollHeight, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
